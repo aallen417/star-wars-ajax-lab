@@ -1,0 +1,17 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.starship-details-container {
+  font-size: large;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(28, 90, 148);
+  color: black;
+  width: 75%;
+  border-radius: 12px;
+}
