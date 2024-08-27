@@ -7,6 +7,11 @@ import { getAllStarships } from "../../services/sw-api"
 
 const AllStarships = () => {
   const [allStarships, setAllStarships] = useState([])
+
+const starshipKey = function (url) {
+  const urls = url.split("/")
+  return urls[5]  
+}
   
   useEffect(() => {    
     const fetchAllStarships = async () => {
@@ -22,9 +27,9 @@ const AllStarships = () => {
       <main className="all-starships">
         <h1>STAR WARS STARSHIPS</h1>
           {allStarships.map(starship =>
-            <div className="starship-link-container" key={starship.url}> 
-              {starship.name}     
-            </div>
+            <Link to={`/${starshipKey(starship.url)}`} className="starship-link-container" key={starshipKey(starship.url)}> 
+              {starship.name}
+            </Link>
           )}
       </main>
     </>
